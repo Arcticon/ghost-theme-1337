@@ -1,0 +1,208 @@
+@black: #000;
+
+//**********	FONT
+@bodyFont: #080808;
+@navFontColor: #FFF;
+//**********	FONT
+
+
+//**********	NAV
+@navHeight: 150px;
+@navWidth: 100%;
+//@navBackgroundColor: #001c34;
+@navBackgroundColor: #6e091b;
+@navLinksPaddingTop: 55px;
+
+//**********	NAV
+
+//**********	BUTTON
+@btnFontColor: #fafafa;
+//**********	BUTTON
+
+//**********	CONTAINER
+@containerWidth: 1500px;
+@containerMinHeight: 500px;
+//**********	CONTAINER
+
+//**********	FOOTER
+@footerWidth: 100%;
+@footerHeight: 100px;
+@footerBackgroundColor: #fff;
+@footerBoxShadowOffset: -5px;
+@footerBoxShadow: 0 @footerBoxShadowOffset 0 darken(@footerBackgroundColor, 7%);
+//**********	FOOTER
+
+html{
+	position: relative;
+	min-height: 100%;
+}
+
+body{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 18px;
+	width: 100%;
+	margin: 0;
+	margin-bottom: calc(@footerHeight - @footerBoxShadowOffset + 25px);
+	float: left;
+	color: @bodyFont;
+}
+
+h1,h2,h3,h4,h5{
+	//text-shadow: 1px 2px 2px @fontColor;
+	color: @bodyFont;
+}
+
+a{
+	color: #800032;
+	font-weight: bold;
+
+	&:visited{
+		color: #800032;
+	}
+
+	&:hover{
+		color: #800032;
+		text-decoration: none;
+		//text-shadow: 1px 1px 2px #800032;
+	}
+}
+
+.button-create(@color){
+	background: @color;
+	box-shadow: 0 4px 0 darken(@color, 7%);
+
+	&:active{
+		box-shadow: 0 2px 0 darken(@color, 7%);
+		position: relative;
+		top: 2px;
+	}
+}
+
+.nav{
+	width: @navWidth;
+	height: @navHeight;
+	//color: @navFontColor;
+	//background-color: @navBackgroundColor;
+	//background-image: url("https://wallpaperscraft.com/image/space_background_blue_dots_73340_1920x1080.jpg");
+	background-image: url("http://www.wallpaperup.com/uploads/wallpapers/2015/05/17/690189/8c1d6354be815bae83c56032c3f09894.jpg");
+	box-shadow: 0 5px 0 darken(@navBackgroundColor, 7%);
+}
+
+.nav-logo{
+	float: left;
+	height: 100px;
+	padding: 15px 25px 0 25px;
+}
+
+.nav-logo-text{
+	float: left;
+	color: @navFontColor;
+	padding-top: 35px;
+}
+
+.nav-logo-subtext{
+	float: left;
+	color: @navFontColor;
+	padding-top: 75px;
+}
+
+.nav-links{
+	height: @navHeight;
+	float: right!important;
+	padding: 0;
+	margin: 0;
+
+	> li{
+		height: calc(@navHeight - @navLinksPaddingTop);
+		padding: @navLinksPaddingTop 12px 0 12px;
+		float: left;
+		position: relative;
+		display: block;
+
+		&.active{
+			background-color: fade(darken(@navBackgroundColor, 7%), 50%);
+		}
+
+		&:hover{
+			position: relative;
+			background-color: fade(darken(@navBackgroundColor, 7%), 90%);
+			text-decoration: underline;
+		}
+
+		> a{
+			text-transform: uppercase;
+			text-decoration: none;
+			color: @navFontColor;
+		}
+	}
+}
+
+.btn{
+	text-transform: uppercase;
+	padding: 12px;
+	border: none;
+	text-align: center;
+	outline: none;
+	cursor: pointer;
+	color: @btnFontColor;
+
+	&.btn-red{
+		.button-create(#a01717);
+	}
+
+	&.btn-green{
+		.button-create(#17a017);
+	}
+
+	&.btn-blue{
+		.button-create(#1717a0);
+	}
+
+	&.btn-yellow{
+		.button-create(#d0d007);
+	}
+
+	&.btn-orange{
+		.button-create(#d48617);
+	}
+
+	&.btn-black{
+		.button-create(#222222);
+	}
+}
+
+.container{
+	margin: 0 auto;
+	width: @containerWidth;
+}
+
+.blog{
+	position: relative;
+	float: left;
+	width: 1000px;
+	padding-right: 50px;
+}
+
+.info{
+	position: relative;
+	float: right!important;
+	width: 450px;
+}
+
+footer{
+	display: block;
+}
+
+.footer{
+	position: absolute;
+	bottom: 0;
+	width: @footerWidth;
+	height: @footerHeight;
+
+	background-color: @footerBackgroundColor;
+	box-shadow: @footerBoxShadow;
+
+	>.container{
+		padding: 0;
+	}
+}

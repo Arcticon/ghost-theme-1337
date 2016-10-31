@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Page Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    {{!-- Mobile Meta --}}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Brand icon --}}
+    <!--<link rel="shortcut icon" href="{{asset "favicon.ico"}}">-->
+
+    {{!-- Styles'n'Scripts --}}
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{{asset "bootstrap/css/bootstrap.min.css"}}" />
+
+    <link rel="stylesheet" type="text/css" href="{{asset "site/css/main.css"}}" />
+
+    <link rel="stylesheet" type="text/css" href="{{asset "tether-1.3.3/dist/css/tether.css"}}" />
+
+    <link rel="stylesheet" type="text/css" href="{{asset "font-awesome-4.7.0/css/font-awesome.min.css"}}" />
+
+    {{!-- Ghost outputs important style and meta data with this tag --}}
+    {{ghost_head}}
+</head>
+<body>
+
+    {{!-- The blog navigation links --}}
+    {{navigation}}
+
+    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+    {{{body}}}
+
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2016</p>
+        </div>
+    </footer>
+
+
+
+    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
+    <script type="text/javascript" src="{{asset "jquery/jquery-3.1.1.min.js"}}"></script>
+
+    <script type="text/javascript" src="{{asset "tether-1.3.3/dist/js/tether.js"}}"></script>
+
+    <script type="text/javascript" src="{{asset "bootstrap/js/bootstrap.js"}}"></script>
+
+    {{!-- Ghost outputs important scripts and data with this tag --}}
+    {{ghost_foot}}
+    {{!-- Fitvids makes video embeds responsive and awesome --}}
+    <!-- <script type="text/javascript" src="{{asset "site/js/jquery.fitvids.js"}}"></script> -->
+    {{!-- The main JavaScript file for Casper --}}
+    <!-- <script type="text/javascript" src="{{asset "site/js/index.js"}}"></script> -->
+
+</body>
+</html>

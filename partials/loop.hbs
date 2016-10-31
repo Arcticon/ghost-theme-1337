@@ -1,0 +1,93 @@
+{{!-- Previous/next page links - only displayed on page 2+ --}}
+<!--<div class="extra-pagination inner">
+    {{pagination}}
+</div>-->
+
+<div class="container">
+    <div class="row">
+        {{#foreach posts}}
+            {{#if featured}}
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <div class="card-block">
+                            <h4 class="card-title">{{title}}</h4>
+                            <h6 class="card-subtitle text-muted">
+                                <i class="fa fa-user" aria-hidden="true"></i> {{author.name}}
+                                <br/>
+                                <i class="fa fa-calendar" aria-hidden="true"></i> <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MMMM.YYYY"}}</time>
+                            </h6>
+                        </div>
+                        {{#if image}}
+                            <img src="{{image}}" width="100%" height="150" alt="Post Image">
+                        {{else}}
+                            <img src="{{asset "site/images/FeaturedBlogPostImage.png"}}" width="100%" height="150" alt="Post Image">
+                        {{/if}}
+                        <div class="card-block">
+                            <p class="card-text">{{excerpt words="26"}}...</p>
+                            <a href="{{url}}" class="btn btn-card">Read more...</a>
+                        </div>
+                    </div>
+                </div>
+            {{/if}}
+        {{/foreach}}
+    </div>
+
+    <div class="row">
+        {{!-- This is the post loop - each post will be output using this markup --}}
+        {{#foreach posts}}
+            <!-- <header class="post-header">
+                <h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
+            </header>
+            <section class="post-excerpt">
+                <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+            </section>
+            <footer class="post-meta">
+                {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
+                {{author}}
+                {{tags prefix=" on "}}
+                <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+            </footer> -->
+
+            {{#unless featured}}
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">{{title}}</h4>
+                            <h6 class="card-subtitle text-muted">
+                                <i class="fa fa-user" aria-hidden="true"></i> {{author.name}}
+                                <br/>
+                                <i class="fa fa-calendar" aria-hidden="true"></i> <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MMMM.YYYY"}}</time>
+                            </h6>
+                        </div>
+                        {{#if image}}
+                            <img src="{{image}}" width="100%" height="150" alt="Post Image">
+                        {{else}}
+                            <img src="{{asset "site/images/NewBlogPostImage.png"}}" width="100%" height="150" alt="Post Image">
+                        {{/if}}
+                        <div class="card-block">
+                            <p class="card-text">{{excerpt words="26"}}...</p>
+                            <a href="{{url}}" class="btn btn-card">Read more...</a>
+                        </div>
+                    </div>
+                </div>
+            {{/unless}}
+        {{/foreach}}
+    </div>
+</div>
+
+<!-- {{!-- Previous/next page links - displayed on every page --}}
+{{pagination}} -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2 col-md-12 col-sm-12 float-xs-right">
+
+            {{!-- Previous/next page links - displayed on every page --}}
+            {{pagination}}
+        
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+@navBackgroundColor: #182431;//182431 ae0444
+@navBackgroundColorInRGBA:  rgba(24, 36, 49, 0.45);
+@image: "http://blog.arcticon.de/content/images/2016/06/6797405-green-space-1.jpg";
+
+@orange: #d48617;
+@white: #FFF;
+@black: #000;
+
+@btnCardBackgroundColor: #3D5C7D;
+
+body{
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.top{
+	margin-bottom: 10px;
+}
+
+.collapse.in {
+    padding-top: 38px;
+}
+
+.collapsing {
+    padding-top: 38px;
+}
+
+.navbar {
+	background-color: @navBackgroundColor;
+}
+
+.navbar {
+	background:
+	    linear-gradient(
+	      @navBackgroundColorInRGBA,
+	      rgba(0, 0, 0, 0) 
+	    ),
+    	url(@image);
+
+	border-radius: 0px;
+}
+
+.card {
+	background: darken(@white, 5%);
+}
+
+.card-header {
+	background: darken(@navBackgroundColor, 0%);
+	color: @white;
+}
+
+.btn-card {
+	background-color: @btnCardBackgroundColor;
+	color: @white;
+
+	&:hover{
+		color: darken(@white, 10%);
+		background-color: darken(@btnCardBackgroundColor, 15%);
+		text-decoration: underline;
+	}
+
+	&:active{
+		position: relative;
+		top: 2px;
+	}
+}
+
+.jumbotron {
+	padding-top: 25px;
+	padding-bottom: 0;
+}
