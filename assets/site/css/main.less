@@ -225,12 +225,43 @@ footer{
     background: lighten(@featuredBackgroundColor, 10%);
 }
 
+.page-link {
+
+	color: @linkColor;
+
+    &:hover{
+	    background-color: lighten(@featuredBackgroundColor, 80%);
+    }
+
+    &:focus{
+	    background-color: @featuredBackgroundColor;
+	    border-color: lighten(@featuredBackgroundColor, 10%);
+    }
+}
+
+.page-item.active .page-link {
+    background-color: lighten(@featuredBackgroundColor, 10%);
+    border-color: lighten(@featuredBackgroundColor, 10%);
+
+    &:hover{
+	    background-color: @featuredBackgroundColor;
+	    border-color: lighten(@featuredBackgroundColor, 10%);
+    }
+
+    &:focus{
+	    background-color: @featuredBackgroundColor;
+	    border-color: lighten(@featuredBackgroundColor, 10%);
+    }
+}
 
 
 
 
-
-
+// .page-link:focus, .page-link:hover {
+//     color: #014c8c;
+//     background-color: #eceeef;
+//     border-color: #ddd;
+// }
 
 
 
