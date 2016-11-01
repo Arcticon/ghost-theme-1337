@@ -31,7 +31,7 @@
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
 </head>
-<body>
+<body {{#is "post"}}class="post"{{/is}}>
 
     {{!-- The blog navigation links --}}
     {{navigation}}
@@ -39,11 +39,7 @@
     {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
     {{{body}}}
 
-    <footer class="footer">
-        <div class="container">
-            <p>Copyright &copy; 2016</p>
-        </div>
-    </footer>
+    {{> footer}}
 
 
 

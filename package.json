@@ -1,4 +1,33 @@
 {
-  "name": "1337",
-  "version": "0.1.0"
+	"name": "1337",
+	"description": "Simplistic Dev Blogging Theme. 1337 HaXx0r!!1one",
+	"demo": "http://blog.arcticon.de",
+	"version": "0.9.0",
+    "license": "MIT",
+    "author": {
+        "name": "Maximilian Kramp",
+        "email": "arcticon@arcticon.de",
+        "url": "http://arcticon.de"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Personal Blogs",
+            "Dev Blog"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "1337",
+        "arcticon",
+        "dev blog"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Arcticon/ghost-theme-1337.git"
+    },
+    "bugs": "https://github.com/Arcticon/ghost-theme-1337/issues",
+    "contributors": "https://github.com/Arcticon/ghost-theme-1337/graphs/contributors"
 }
