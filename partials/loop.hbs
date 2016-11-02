@@ -1,7 +1,4 @@
 {{!-- Previous/next page links - only displayed on page 2+ --}}
-<!--<div class="extra-pagination inner">
-    {{pagination}}
-</div>-->
 
 <div class="container">
     <div class="row">
@@ -15,18 +12,20 @@
                         <div class="card-block">
                             <h4 class="card-title">{{title}}</h4>
                             <h6 class="card-subtitle text-muted">
-                                <i class="fa fa-user" aria-hidden="true"></i> {{author.name}}
+                                <i class="fa fa-user" aria-hidden="true"></i> <a href="{{#author}}{{url}}{{/author}}">{{author.name}}</a>
                                 <br/>
                                 <i class="fa fa-calendar" aria-hidden="true"></i> <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MMMM.YYYY"}}</time>
                                 <br/>
+                                <i class="fa fa-tags" aria-hidden="true"></i>
                                 {{#if tags}}
-                                    <i class="fa fa-tags" aria-hidden="true"></i> 
                                     {{#foreach tags}}
                                         <!-- <li>
                                         <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
                                         </li> -->
                                         <a href="{{url}}" title="{{name}}"><span class="tag tag-green">{{name}}</span></a>
                                     {{/foreach}}
+                                {{else}}
+                                    <a><span class="tag tag-green">none</span></a>
                                 {{/if}}
                                 <!-- tags -->
                             </h6>
@@ -55,9 +54,21 @@
                         <div class="card-block">
                             <h4 class="card-title">{{title}}</h4>
                             <h6 class="card-subtitle text-muted">
-                                <i class="fa fa-user" aria-hidden="true"></i> {{author.name}}
+                                <i class="fa fa-user" aria-hidden="true"></i> <a href="{{#author}}{{url}}{{/author}}">{{author.name}}</a>
                                 <br/>
                                 <i class="fa fa-calendar" aria-hidden="true"></i> <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MMMM.YYYY"}}</time>
+                                <br/>
+                                <i class="fa fa-tags" aria-hidden="true"></i>
+                                {{#if tags}}
+                                    {{#foreach tags}}
+                                        <!-- <li>
+                                        <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
+                                        </li> -->
+                                        <a href="{{url}}" title="{{name}}"><span class="tag tag-green">{{name}}</span></a>
+                                    {{/foreach}}
+                                {{else}}
+                                    <a><span class="tag tag-green">none</span></a>
+                                {{/if}}
                             </h6>
                             
                             {{#if tags}}

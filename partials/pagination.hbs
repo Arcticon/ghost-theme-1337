@@ -12,13 +12,13 @@
 					<li class="page-item active">
 						<a class="page-link">{{page}} <span class="sr-only">(current)</span></a>
 					</li>
-					<li class="page-item">
+					{{!-- <li class="page-item">
 						<a class="page-link">&hellip;</a>
 					</li>
 					<li class="page-item">
 						<a class="page-link" href="/page/{{pages}}">{{pages}}</a>
-					</li>
-					<li class="page-item">
+					</li> --}}
+					<li class="page-item{{#unless next}} disabled{{/unless}}">
 						<a class="page-link" href="{{page_url next}}" aria-label="Next">
 							<span aria-hidden="true">&raquo;</span>
 							<span class="sr-only">Next</span>

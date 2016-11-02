@@ -1,9 +1,9 @@
 <nav class="navbar navbar-dark navbar-static-top{{#is "home, paged"}} top{{/is}}"><!-- bg-inverse -->
     <div class="container">
         <a class="navbar-brand" href="/">
-            {{#if @blog.logo}}
-                <img src="{{@blog.logo}}" width="60" height="30" class="d-inline-block align-top" alt="">
-            {{/if}}
+            
+            <img src="{{#if @blog.logo}}{{@blog.logo}}{{else}}http://placehold.it/30x30{{/if}}" width="30" height="30" class="d-inline-block align-top" alt="">
+
             {{@blog.title}}
         </a>
         <span class="navbar-text float-xs-left text-muted" style="color: #dedede!important;">
@@ -28,6 +28,16 @@
                         <a class="nav-link subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
                     </li>
                 {{/if}}
+                
+                <li class="nav-item">
+                    <a class="nav-link white" target="_blank" href="{{#if twitter_url}}{{twitter_url}}{{else}}https://twitter.com/arcticon1337{{/if}}"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link white" target="_blank" href="{{#if facebook_url}}{{facebook_url}}{{else}}https://www.facebook.com/Arcticon1337{{/if}}"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link white" target="_blank" href="http://steamcommunity.com/id/Arcticon"><i class="fa fa-steam" aria-hidden="true"></i> Steam</a>
+                </li>
             </ul>
         </div>
     </div>

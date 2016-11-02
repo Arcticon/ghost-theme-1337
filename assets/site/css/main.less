@@ -4,7 +4,7 @@
 @image: "http://blog.arcticon.de/content/images/2016/06/6797405-green-space-1.jpg";
 
 @linkColor: #0F4431; //bd4147
-@linkColor2: #bd4147;
+@linkColor2: #000; //bd4147
 
 @orange: #d48617;
 @white: #FFF;
@@ -18,14 +18,29 @@
 @footerHeight: 60px;
 @footerWidth: 100%;
 
-html{
+html {
 	position: relative;
 }
 
-body{
+body {
 	font-family: 'Ubuntu', sans-serif;
 	margin-bottom: @footerHeight;
 	color: darken(@bootstrapTextColor, 5%)!important;
+}
+
+p {
+	> code {
+		// color: lighten(@linkColor, 15%);
+		color: #0F0;
+		background-color: #333;
+	}
+}
+
+h6, .text-muted{
+
+	> a {
+		color: @black;
+	}
 }
 
 .active {
@@ -89,6 +104,10 @@ body{
     	url(@image);
 
 	border-radius: 0px;
+}
+
+.white {
+	color: @white!important;
 }
 
 .card {
@@ -257,15 +276,48 @@ footer{
 
 
 
-// .page-link:focus, .page-link:hover {
-//     color: #014c8c;
-//     background-color: #eceeef;
-//     border-color: #ddd;
-// }
 
 
 
 
+
+
+
+/* ==========================================================================
+   1. Icons - Sets up the icon font and respective classes
+   ========================================================================== */
+
+/* Import the font file with the icons in it */
+@font-face {
+    font-family: "casper-icons";
+    src:url("../fonts/casper-icons.eot?v=1");
+    src:url("../fonts/casper-icons.eot?v=1#iefix") format("embedded-opentype"),
+        url("../fonts/casper-icons.woff?v=1") format("woff"),
+        url("../fonts/casper-icons.ttf?v=1") format("truetype"),
+        url("../fonts/casper-icons.svg?v=1#icons") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply these base styles to all icons */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "casper-icons", "Open Sans", sans-serif;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    text-decoration: none !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Each icon is created by inserting the correct character into the
+   content of the :before pseudo element. Like a boss. */
+.icon-ghost:before {
+    content: "\f600";
+}
 
 
 // https://codepen.io/arlinadesign/pen/xboQQb
@@ -404,7 +456,7 @@ blockquote::before{
 
 blockquote::after{
 	/*Reset to make sure*/
-content: "";
+	content: "";
 }
 
 blockquote a{
